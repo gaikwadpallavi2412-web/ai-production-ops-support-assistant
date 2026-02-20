@@ -9,3 +9,4 @@ langchain_text_splitters
 faiss-cpu
 python-dotenv
 pydantic
+openai
