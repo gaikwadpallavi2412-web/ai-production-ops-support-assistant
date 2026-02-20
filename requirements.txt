@@ -3,6 +3,7 @@ gunicorn
 langchain
 langchain-openai
 langchain-community
+langchain-core
 langsmith
 langchain_text_splitters
 faiss-cpu
