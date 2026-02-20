@@ -65,8 +65,8 @@ def get_rag_llm() -> ChatOpenAI:
 
 def _extract_reference_ids(docs: List[Document]) -> List[str]:
     """
-    Extract source filenames from retrieved documents.
-    Hardened against null/empty metadata.
+    Extract clean document filenames from retrieved documents.
+    Production-hardened version.
     """
 
     r_doc = set()
@@ -74,15 +74,22 @@ def _extract_reference_ids(docs: List[Document]) -> List[str]:
     for d in docs:
         md = d.metadata or {}
 
-        doc_src = md.get("source")
+        # 🔥 Try multiple common metadata keys (enterprise pattern)
+        doc_src = (
+            md.get("source")
+            or md.get("file_path")
+            or md.get("filename")
+        )
 
         # 🔥 HARD GUARDS
         if not doc_src:
             continue
-        if str(doc_src).lower() in {"none", "null", ""}:
+
+        doc_src = str(doc_src).strip()
+        if doc_src.lower() in {"none", "null", ""}:
             continue
 
-        filename = os.path.basename(str(doc_src).strip())
+        filename = os.path.basename(doc_src)
 
         if filename and filename.lower() not in {"none", "null"}:
             r_doc.add(filename)
