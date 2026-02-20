@@ -89,7 +89,9 @@ def _extract_reference_ids(docs: List[Document]) -> List[str]:
         if doc_src.lower() in {"none", "null", ""}:
             continue
 
-        filename = os.path.basename(doc_src)
+        #filename = os.path.basename(doc_src)
+     
+        filename=doc_src[doc_src.rfind("\\")+1:]
 
         if filename and filename.lower() not in {"none", "null"}:
             r_doc.add(filename)
