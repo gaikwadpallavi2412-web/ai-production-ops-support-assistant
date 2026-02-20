@@ -1,0 +1,37 @@
+Alert Name: Warning – SWIFT Processing Delay
+Alert ID: ALT-SWIFT-002
+Service: swift-processing
+Severity: Warning
+Environment: Production
+
+Trigger Condition:
+Average SWIFT message processing latency exceeded SLA.
+
+Threshold Details:
+
+SLA: 1500 ms
+
+Current Avg: 2180 ms
+
+Detection Time: 2025-02-11T06:18:44Z
+
+Business Impact:
+Delayed SWIFT acknowledgements to partner banks.
+
+Recommended Runbook:
+SWIFT Message Processing Failure Recovery
+
+Immediate Actions:
+
+Check SWIFT gateway connectivity
+
+Review parser logs
+
+Verify certificate validity
+
+Monitor retry queue
+
+Escalation Policy:
+Escalate to Payments-Ops if latency persists for 20 minutes.
+
+Status: Active

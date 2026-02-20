@@ -1,0 +1,30 @@
+Ticket ID: SR-Trade-009
+Title: Kubernetes Trade Pod Restarting
+Service: trade-microservice
+Priority: Medium
+Status: Resolved
+Assigned Group: Platform-Ops
+
+User Description:
+Multiple trade pods observed restarting frequently.
+
+Impact:
+Minor service instability.
+
+Investigation:
+
+OOMKilled events detected
+
+Memory limits too low
+
+Fix Applied:
+
+Increased memory limits
+
+Redeployed service
+
+Root Cause:
+Insufficient container memory allocation.
+
+Validation:
+Restart rate returned to baseline.

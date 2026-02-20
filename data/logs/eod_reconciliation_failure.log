@@ -1,0 +1,7 @@
+2025-02-05 22:05:11.441 ERROR [eod-recon] Batch job failed jobId=EOD-77821
+2025-02-05 22:05:14.882 WARN  Input file missing for region=EU
+2025-02-05 22:05:18.220 ERROR Validation step failed missingRecords=1520
+2025-02-05 22:05:31.991 INFO  Waiting for upstream file arrival
+2025-02-05 22:21:55.003 INFO  Missing file received
+2025-02-05 22:34:21.778 INFO  Batch rerun initiated
+2025-02-05 23:02:11.552 INFO  Reconciliation completed successfully

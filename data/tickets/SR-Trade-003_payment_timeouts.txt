@@ -1,0 +1,32 @@
+Ticket ID: SR-Trade-003
+Title: Users Reporting Payment Timeouts
+Service: payment-gateway
+Priority: High
+Status: Resolved
+Assigned Group: Payments-Ops
+
+User Description:
+Customers experiencing timeout during payment authorization.
+
+Impact:
+Increased payment retries and minor customer complaints.
+
+Investigation:
+
+Upstream bank latency high
+
+Gateway thread pool near saturation
+
+Fix Applied:
+
+Scaled gateway pods
+
+Increased thread pool size
+
+Enabled retry backoff
+
+Root Cause:
+Upstream latency combined with insufficient thread capacity.
+
+Validation:
+Timeout rate dropped below 0.5%.

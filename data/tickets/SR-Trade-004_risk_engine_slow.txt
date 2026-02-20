@@ -1,0 +1,30 @@
+Ticket ID: SR-Trade-004
+Title: Risk Engine Running Slow
+Service: trade-risk
+Priority: Medium
+Status: Resolved
+Assigned Group: Risk-Ops
+
+User Description:
+Risk calculations taking longer than usual during market open.
+
+Impact:
+Minor delay in risk dashboards.
+
+Investigation:
+
+CPU consistently above 85%
+
+Trade volume spike detected
+
+Fix Applied:
+
+Scaled pods from 4 to 8
+
+Tuned HPA threshold
+
+Root Cause:
+Under-provisioned capacity for peak load.
+
+Validation:
+Latency returned to normal baseline.

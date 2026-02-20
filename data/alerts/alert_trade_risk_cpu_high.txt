@@ -1,0 +1,37 @@
+Alert Name: Warning – Trade Risk Engine CPU High
+Alert ID: ALT-RISK-006
+Service: trade-risk
+Severity: Warning
+Environment: Production
+
+Trigger Condition:
+CPU utilization above configured threshold.
+
+Threshold Details:
+
+Warning: > 75%
+
+Current CPU: 87%
+
+Detection Time: 2025-02-15T09:02:14Z
+
+Business Impact:
+Potential delay in risk calculations.
+
+Recommended Runbook:
+Memory Leak in Trade Risk Calculation Service
+
+Immediate Actions:
+
+Review pod CPU metrics
+
+Check trade volume spike
+
+Verify HPA behavior
+
+Scale pods if required
+
+Escalation Policy:
+Escalate if CPU remains high for 15 minutes.
+
+Status: Active

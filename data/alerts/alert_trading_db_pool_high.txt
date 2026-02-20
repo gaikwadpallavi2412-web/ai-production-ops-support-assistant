@@ -1,0 +1,39 @@
+Alert Name: Critical – Trading DB Connection Pool > 90%
+Alert ID: ALT-DB-003
+Service: trading-db
+Severity: Critical
+Environment: Production
+
+Trigger Condition:
+Database connection pool utilization above safe threshold.
+
+Threshold Details:
+
+Warning: > 80%
+
+Critical: > 90%
+
+Current Usage: 96%
+
+Detection Time: 2025-02-12T16:02:11Z
+
+Business Impact:
+Risk of trade booking failures and API timeouts.
+
+Recommended Runbook:
+Database Connection Pool Exhaustion – Trading DB
+
+Immediate Actions:
+
+Check active sessions
+
+Identify long-running queries
+
+Clear orphan connections
+
+Consider temporary pool increase
+
+Escalation Policy:
+Page DB-Ops immediately if above 95% for 5 minutes.
+
+Status: Active

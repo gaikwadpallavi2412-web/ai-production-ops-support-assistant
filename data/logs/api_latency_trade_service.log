@@ -1,0 +1,7 @@
+2025-02-02 07:42:11.551 WARN  [trade-reporting-api] Response latency high endpoint=/reports latency=3100ms
+2025-02-02 07:42:18.004 WARN  Read replica CPU elevated cpu=88%
+2025-02-02 07:42:25.661 ERROR Request timeout exceeded requestId=REP66221
+2025-02-02 07:42:41.220 WARN  Slow query detected duration=4.8s
+2025-02-02 07:42:55.918 INFO  Auto scaling read replicas triggered
+2025-02-02 07:43:21.337 INFO  Latency trending down
+2025-02-02 07:44:10.112 INFO  API latency within SLA

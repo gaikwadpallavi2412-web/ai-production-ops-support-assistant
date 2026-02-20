@@ -1,0 +1,37 @@
+Title: High Disk Usage on Trade Processing Servers
+Service: infra-trade
+Severity: Critical
+Owner Team: Infra-Ops
+
+Symptoms:
+
+Disk usage above 90%
+
+Log write failures
+
+Pod eviction warnings
+
+Node filesystem pressure alerts
+
+Initial Checks:
+
+Identify large files using disk analysis
+
+Check log rotation configuration
+
+Inspect temp directory growth
+
+Verify recent batch jobs
+
+Resolution Steps:
+
+Clean old logs safely
+
+Trigger manual log rotation
+
+Remove stale temp files
+
+Expand disk if required
+
+Escalation:
+Page Infra on-call if disk exceeds 95%.

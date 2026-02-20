@@ -1,0 +1,37 @@
+Title: Trade Settlement Queue Backlog Handling
+Service: trade-settlement
+Severity: High
+Owner Team: Trade-Ops
+
+Symptoms:
+
+Settlement queue depth increasing rapidly
+
+Trades stuck in PENDING status
+
+Downstream confirmations delayed
+
+MQ queue showing sustained backlog
+
+Initial Checks:
+
+Check MQ queue depth metrics
+
+Verify settlement consumer pod health
+
+Review DB latency and locks
+
+Check recent deployment changes
+
+Resolution Steps:
+
+Restart settlement consumer pods
+
+Validate and reprocess stuck messages
+
+Scale consumer deployment if backlog persists
+
+Monitor queue drain rate
+
+Escalation:
+Page Trade-Ops on-call if backlog persists beyond 30 minutes.

@@ -1,0 +1,62 @@
+Incident ID: INC-004
+Service: trade-risk
+Severity: P3
+Region: Global
+Detected By: CPU Alert – Risk Engine
+
+Summary:
+Sustained high CPU utilization observed on Trade Risk Calculation service pods during market open window. Alert triggered when CPU exceeded 85% for more than 10 minutes.
+
+Business Impact:
+
+Risk calculations delayed by ~3–5 seconds
+
+No trade failures reported
+
+Minor SLA breach for risk computation latency
+
+Timeline:
+
+09:02 UTC – CPU alert triggered
+
+09:05 UTC – L2 investigation started
+
+09:12 UTC – Pod metrics reviewed
+
+09:18 UTC – Horizontal scaling applied
+
+09:24 UTC – CPU normalized
+
+Investigation Findings:
+
+Increased trade volume at market open
+
+Risk calculation threads running at max capacity
+
+No memory pressure observed
+
+No recent deployment changes
+
+Root Cause:
+Traffic spike during market open caused CPU saturation due to insufficient HPA threshold tuning.
+
+Resolution:
+
+Increased replica count from 4 → 8
+
+Adjusted HPA CPU target from 80% → 65%
+
+Monitored for 30 minutes
+
+Duration:
+22 minutes
+
+Preventive Actions:
+
+Review HPA settings quarterly
+
+Add pre-market scaling policy
+
+Improve capacity planning for peak windows
+
+Status: Resolved

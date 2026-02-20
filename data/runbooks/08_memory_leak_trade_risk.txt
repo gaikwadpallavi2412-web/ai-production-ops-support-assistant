@@ -1,0 +1,35 @@
+Title: Memory Leak in Trade Risk Calculation Service
+Service: trade-risk
+Severity: High
+Owner Team: Risk-Ops
+
+Symptoms:
+
+Gradual memory increase
+
+Frequent OOM kills
+
+GC time increasing
+
+Initial Checks:
+
+Review heap usage
+
+Check recent code changes
+
+Inspect GC logs
+
+Compare pod restarts
+
+Resolution Steps:
+
+Restart affected pods
+
+Capture heap dump
+
+Temporarily scale pods
+
+Raise bug for dev team
+
+Escalation:
+Escalate to Engineering if leak confirmed.

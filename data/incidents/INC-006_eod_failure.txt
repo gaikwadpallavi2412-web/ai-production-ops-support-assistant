@@ -1,0 +1,62 @@
+Incident ID: INC-006
+Service: eod-recon
+Severity: P1
+Region: Global
+Detected By: Batch Scheduler Alert
+
+Summary:
+End-of-Day trade reconciliation batch failed during nightly processing window.
+
+Business Impact:
+
+Reconciliation report delayed
+
+Finance team blocked for downstream processing
+
+No trade data loss
+
+Timeline:
+
+22:05 UTC – Batch failure alert
+
+22:08 UTC – L2 engaged
+
+22:15 UTC – Log review completed
+
+22:21 UTC – Input file issue identified
+
+22:34 UTC – Batch rerun initiated
+
+23:02 UTC – Batch completed successfully
+
+Investigation Findings:
+
+Missing input file for EU trades
+
+Upstream file transfer delay
+
+Scheduler functioning normally
+
+Root Cause:
+Delayed upstream file delivery caused batch validation failure.
+
+Resolution:
+
+Retrieved missing file
+
+Re-triggered reconciliation job
+
+Verified output reports
+
+Duration:
+57 minutes
+
+Preventive Actions:
+
+Add upstream file arrival alert
+
+Implement retry logic in batch
+
+Improve dependency checks
+
+Status: Resolved

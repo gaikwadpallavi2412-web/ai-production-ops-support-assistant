@@ -1,0 +1,35 @@
+Title: Trade Booking API Latency Troubleshooting
+Service: trade-booking-api
+Severity: High
+Owner Team: API-Ops
+
+Symptoms:
+
+API latency above SLA
+
+Increased timeout errors
+
+Thread pool saturation
+
+Initial Checks:
+
+Check API CPU and memory
+
+Review slow DB queries
+
+Check downstream latency
+
+Inspect thread pool usage
+
+Resolution Steps:
+
+Restart API pods
+
+Scale deployment horizontally
+
+Optimize slow queries
+
+Enable temporary rate limiting if needed
+
+Escalation:
+Escalate if latency persists after scaling.

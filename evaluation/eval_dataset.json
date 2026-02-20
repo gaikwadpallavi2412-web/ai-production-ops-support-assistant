@@ -1,0 +1,119 @@
+[
+  {
+    "query": "eod reconciliation failure steps",
+    "expected_intent": "runbook_lookup",
+    "expected_primary_source": "runbook",
+    "acceptable_sources": ["runbook", "incident"],
+    "expected_services": ["eod-recon"],
+    "expected_reference_ids": ["runbook_0010"],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "swift processing failure runbook",
+    "expected_intent": "runbook_lookup",
+    "expected_primary_source": "runbook",
+    "acceptable_sources": ["runbook", "incident"],
+    "expected_services": ["swift-processing"],
+    "expected_reference_ids": ["runbook_0002"],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "payment gateway timeout issue investigation",
+    "expected_intent": "incident_analysis",
+    "expected_primary_source": "alert",
+    "acceptable_sources": ["alert", "incident", "runbook"],
+    "expected_services": ["payment-gateway"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "mq trade events queue depth high",
+    "expected_intent": "incident_analysis",
+    "expected_primary_source": "alert",
+    "acceptable_sources": ["alert", "incident"],
+    "expected_services": ["mq-trade-events"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "trading db connections exhausted what to do",
+    "expected_intent": "runbook_lookup",
+    "expected_primary_source": "runbook",
+    "acceptable_sources": ["runbook", "incident"],
+    "expected_services": ["trading-db"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "trade booking api errors seen in logs",
+    "expected_intent": "log_analysis",
+    "expected_primary_source": "log",
+    "acceptable_sources": ["log", "incident"],
+    "expected_services": ["trade-booking-api"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "kubernetes trade pods restarting frequently",
+    "expected_intent": "incident_analysis",
+    "expected_primary_source": "alert",
+    "acceptable_sources": ["alert", "incident", "log"],
+    "expected_services": ["k8s-trade-platform"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "disk usage high on trade nodes runbook",
+    "expected_intent": "runbook_lookup",
+    "expected_primary_source": "runbook",
+    "acceptable_sources": ["runbook", "alert"],
+    "expected_services": ["trade-nodes"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "why did eod batch fail yesterday",
+    "expected_intent": "incident_analysis",
+    "expected_primary_source": "incident",
+    "acceptable_sources": ["incident", "runbook", "alert"],
+    "expected_services": ["eod-recon"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "users reporting payment timeouts",
+    "expected_intent": "incident_analysis",
+    "expected_primary_source": "ticket",
+    "acceptable_sources": ["ticket", "incident", "alert"],
+    "expected_services": ["payment-gateway"],
+    "expected_reference_ids": [],
+    "is_out_of_scope": false
+  },
+  {
+    "query": "what is the date today",
+    "expected_intent": "general_question",
+    "expected_primary_source": null,
+    "acceptable_sources": [],
+    "expected_services": [],
+    "expected_reference_ids": [],
+    "is_out_of_scope": true
+  },
+  {
+    "query": "who are you",
+    "expected_intent": "general_question",
+    "expected_primary_source": null,
+    "acceptable_sources": [],
+    "expected_services": [],
+    "expected_reference_ids": [],
+    "is_out_of_scope": true
+  },
+  {
+    "query": "tell me a joke",
+    "expected_intent": "general_question",
+    "expected_primary_source": null,
+    "acceptable_sources": [],
+    "expected_services": [],
+    "expected_reference_ids": [],
+    "is_out_of_scope": true
+  }
+]

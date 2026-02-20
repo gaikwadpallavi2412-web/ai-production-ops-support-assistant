@@ -1,0 +1,7 @@
+2025-01-28 09:02:11.551 WARN  [trade-risk] CPU usage high pod=trade-risk-6d7f cpu=87%
+2025-01-28 09:02:22.004 WARN  Risk calculation latency increasing avgLatency=3200ms
+2025-01-28 09:02:35.661 INFO  HPA evaluation triggered
+2025-01-28 09:02:48.220 WARN  CPU sustained above threshold for 10m
+2025-01-28 09:03:01.918 INFO  Scaling replicas from 4 to 8
+2025-01-28 09:03:41.337 INFO  CPU normalized to 54%
+2025-01-28 09:04:10.112 INFO  Risk engine operating normally

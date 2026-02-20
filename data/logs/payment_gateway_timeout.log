@@ -1,0 +1,7 @@
+2025-01-22 11:32:04.221 WARN  [payment-gateway] Upstream bank response slow latency=4200ms
+2025-01-22 11:32:05.884 ERROR [payment-gateway] Payment authorization timeout txnId=PAY778201
+2025-01-22 11:32:07.331 WARN  Retry initiated for txnId=PAY778201 attempt=1
+2025-01-22 11:32:10.992 ERROR Gateway timeout exceeded threshold endpoint=/authorize
+2025-01-22 11:32:18.447 WARN  Thread pool nearing saturation activeThreads=240
+2025-01-22 11:32:42.005 INFO  Payment retry succeeded txnId=PAY778201
+2025-01-22 11:33:01.118 WARN  Timeout rate elevated above SLA (rate=2.1%)

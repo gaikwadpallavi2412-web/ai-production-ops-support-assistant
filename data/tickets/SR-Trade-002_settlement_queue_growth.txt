@@ -1,0 +1,32 @@
+Ticket ID: SR-Trade-002
+Title: Settlement Queue Growing Rapidly
+Service: trade-settlement
+Priority: High
+Status: Resolved
+Assigned Group: Trade-Ops
+
+User Description:
+Settlement queue depth increasing continuously since morning batch window.
+
+Impact:
+Delayed settlement confirmations for EU trades.
+
+Investigation:
+
+Consumer lag observed
+
+One consumer pod unhealthy
+
+MQ broker healthy
+
+Fix Applied:
+
+Restarted consumer pod
+
+Scaled consumers from 4 to 7
+
+Root Cause:
+Consumer instability during traffic spike.
+
+Validation:
+Queue depth normalized within 25 minutes.

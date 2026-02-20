@@ -1,0 +1,7 @@
+2025-01-15 09:11:02.774 ERROR [trading-db] Too many connections (current=498, max=500)
+2025-01-15 09:11:03.102 WARN  [trading-db] Connection pool usage at 96 percent
+2025-01-15 09:11:04.887 ERROR [trading-db] Client timeout waiting for available connection
+2025-01-15 09:11:07.441 WARN  [trading-db] Long running query detected duration=182s queryId=q78921
+2025-01-15 09:11:12.005 ERROR [trading-db] Failed to allocate new session
+2025-01-15 09:11:30.661 INFO  [trading-db] Connection pool cleanup executed
+2025-01-15 09:12:11.908 WARN  Active sessions remain high (active=472)

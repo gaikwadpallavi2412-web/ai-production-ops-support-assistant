@@ -1,0 +1,7 @@
+2025-01-12 10:02:11.482 ERROR [trade-booking-api] [pod:trade-booking-7f9d8] [traceId=ab12cd34] Database connection timeout while processing tradeId=TRX908771
+2025-01-12 10:02:12.015 WARN  [trade-booking-api] [pod:trade-booking-7f9d8] [traceId=ab12cd34] Retrying trade booking request (attempt=1)
+2025-01-12 10:02:14.223 ERROR [trade-booking-api] [pod:trade-booking-7f9d8] [traceId=ab12cd34] Connection pool exhausted (active=120, max=120)
+2025-01-12 10:02:15.901 ERROR [trade-booking-api] [pod:trade-booking-7f9d8] [traceId=ab12cd34] Trade booking failed after retries tradeId=TRX908771
+2025-01-12 10:03:02.117 INFO  [trade-booking-api] Health check passed latency=42ms
+2025-01-12 10:04:18.442 WARN  High thread pool usage detected activeThreads=190
+2025-01-12 10:05:33.008 ERROR Request timeout for endpoint=/api/v1/trades/book duration=5120ms

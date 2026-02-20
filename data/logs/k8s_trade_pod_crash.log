@@ -1,0 +1,7 @@
+2025-01-20 03:12:11.552 WARN  [kubelet] Pod trade-risk-6f7d8 restarted (restartCount=4)
+2025-01-20 03:12:12.004 ERROR [container-runtime] Container exited with OOMKilled
+2025-01-20 03:12:14.661 WARN  [kube-scheduler] Node memory pressure detected node=aks-nodepool-3
+2025-01-20 03:12:18.220 INFO  [kubelet] Attempting pod restart trade-risk-6f7d8
+2025-01-20 03:12:25.918 ERROR Liveness probe failed for pod trade-risk-6f7d8
+2025-01-20 03:12:41.337 WARN  Pod entering CrashLoopBackOff
+2025-01-20 03:13:10.112 INFO  Pod successfully restarted

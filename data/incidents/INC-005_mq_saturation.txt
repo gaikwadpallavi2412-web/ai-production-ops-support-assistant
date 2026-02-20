@@ -1,0 +1,64 @@
+Incident ID: INC-005
+Service: mq-trade-events
+Severity: P2
+Region: US
+Detected By: Queue Depth Alert
+
+Summary:
+Trade events MQ queue depth exceeded critical threshold, indicating consumer lag and delayed message processing.
+
+Business Impact:
+
+Trade event processing delayed up to 12 minutes
+
+Downstream reporting lag observed
+
+No data loss
+
+Timeline:
+
+14:11 UTC – Queue depth alert fired
+
+14:14 UTC – L2 acknowledged
+
+14:18 UTC – Consumer health checked
+
+14:22 UTC – Additional consumers scaled
+
+14:31 UTC – Queue depth trending down
+
+14:44 UTC – Queue normalized
+
+Investigation Findings:
+
+One consumer pod was repeatedly restarting
+
+Message retry rate elevated
+
+Broker health normal
+
+Recent traffic spike from upstream trading system
+
+Root Cause:
+Consumer pod instability combined with traffic surge caused processing lag.
+
+Resolution:
+
+Restarted unhealthy consumer
+
+Scaled consumer group from 3 → 6
+
+Cleared poison messages after validation
+
+Duration:
+33 minutes
+
+Preventive Actions:
+
+Add consumer restart alert
+
+Implement auto-scaling based on queue depth
+
+Improve poison message handling
+
+Status: Resolved

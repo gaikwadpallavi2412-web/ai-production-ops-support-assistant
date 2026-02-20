@@ -1,0 +1,37 @@
+Alert Name: Warning – EOD Batch Job Delay
+Alert ID: ALT-BATCH-010
+Service: eod-recon
+Severity: Warning
+Environment: Production
+
+Trigger Condition:
+EOD batch duration exceeded expected window.
+
+Threshold Details:
+
+Expected Completion: 45 minutes
+
+Current Runtime: 62 minutes
+
+Detection Time: 2025-02-19T22:05:11Z
+
+Business Impact:
+Delay in reconciliation reports for finance teams.
+
+Recommended Runbook:
+Batch EOD Trade Reconciliation Failure
+
+Immediate Actions:
+
+Review batch logs
+
+Check upstream file arrival
+
+Verify DB performance
+
+Monitor job progress
+
+Escalation Policy:
+Escalate if job exceeds 90 minutes.
+
+Status: Active

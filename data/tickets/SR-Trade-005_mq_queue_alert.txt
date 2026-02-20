@@ -1,0 +1,32 @@
+Ticket ID: SR-Trade-005
+Title: MQ Queue Depth Alert Investigation
+Service: mq-trade-events
+Priority: High
+Status: Resolved
+Assigned Group: Messaging-Ops
+
+User Description:
+Automated alert reported trade events queue saturation.
+
+Impact:
+Event processing delay up to 10 minutes.
+
+Investigation:
+
+Consumer restart loops observed
+
+Retry queue elevated
+
+Fix Applied:
+
+Restarted faulty consumer
+
+Cleared poison messages
+
+Scaled consumer group
+
+Root Cause:
+Consumer instability plus traffic burst.
+
+Validation:
+Queue draining normally.

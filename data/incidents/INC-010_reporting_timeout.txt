@@ -1,0 +1,60 @@
+Incident ID: INC-010
+Service: trade-reporting-api
+Severity: P2
+Region: Global
+Detected By: API Timeout Alert
+
+Summary:
+Trade reporting API experienced elevated timeout errors during high reporting load.
+
+Business Impact:
+
+Reporting dashboards slow
+
+No trade impact
+
+User complaints from internal teams
+
+Timeline:
+
+07:42 UTC – Timeout alert fired
+
+07:46 UTC – L2 began investigation
+
+07:51 UTC – DB latency spike observed
+
+07:58 UTC – Read replicas scaled
+
+08:10 UTC – Error rate normalized
+
+Investigation Findings:
+
+Reporting queries heavy
+
+Read replica CPU high
+
+No infra failures
+
+Root Cause:
+Insufficient read replica capacity for reporting workload.
+
+Resolution:
+
+Scaled read replicas
+
+Optimized slow queries
+
+Enabled query caching
+
+Duration:
+28 minutes
+
+Preventive Actions:
+
+Add reporting workload isolation
+
+Improve query indexing
+
+Capacity review monthly
+
+Status: Resolved

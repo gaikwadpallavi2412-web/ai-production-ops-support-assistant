@@ -1,0 +1,15 @@
+Incident ID: INC-003
+Service: trade-booking-api
+Severity: P1
+
+Summary:
+Intermittent trade booking failures during peak load.
+
+Root Cause:
+DB connection pool exhaustion.
+
+Resolution:
+Increased pool size and cleared stale sessions.
+
+Duration:
+41 minutes

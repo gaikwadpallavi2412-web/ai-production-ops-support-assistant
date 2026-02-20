@@ -1,0 +1,30 @@
+Ticket ID: SR-Trade-007
+Title: Trade API Returning 5xx Errors
+Service: trade-booking-api
+Priority: High
+Status: Resolved
+Assigned Group: API-Ops
+
+User Description:
+Spike in HTTP 5xx errors from trade API.
+
+Impact:
+Trade submissions intermittently failing.
+
+Investigation:
+
+Pod memory pressure observed
+
+Some pods restarting
+
+Fix Applied:
+
+Rolled restart of deployment
+
+Increased memory limits
+
+Root Cause:
+Pod memory exhaustion under load.
+
+Validation:
+Error rate normalized.

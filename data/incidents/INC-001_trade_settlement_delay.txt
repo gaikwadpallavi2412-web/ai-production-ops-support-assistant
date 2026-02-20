@@ -1,0 +1,22 @@
+Incident ID: INC-001
+Service: trade-settlement
+Severity: P1
+Region: EU
+
+Summary:
+Trade settlement delays observed across EU region with queue backlog exceeding threshold.
+
+Impact:
+Approximately 18% of trades delayed.
+
+Root Cause:
+Settlement consumer pods experienced memory spike and restarted.
+
+Resolution:
+Pods restarted and HPA limits increased.
+
+Duration:
+38 minutes
+
+Postmortem Notes:
+Recommend memory tuning and alert threshold review.

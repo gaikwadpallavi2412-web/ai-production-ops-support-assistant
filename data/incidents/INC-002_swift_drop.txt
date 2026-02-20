@@ -1,0 +1,15 @@
+Incident ID: INC-002
+Service: swift-processing
+Severity: P2
+
+Summary:
+SWIFT messages intermittently failing.
+
+Root Cause:
+Expired TLS certificate.
+
+Resolution:
+Certificate renewed and service restarted.
+
+Duration:
+22 minutes

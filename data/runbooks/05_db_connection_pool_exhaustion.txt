@@ -1,0 +1,37 @@
+Title: Database Connection Pool Exhaustion – Trading DB
+Service: trading-db
+Severity: Critical
+Owner Team: DB-Ops
+
+Symptoms:
+
+Connection pool exhausted errors
+
+Application timeouts
+
+High DB CPU
+
+Too many connections in DB
+
+Initial Checks:
+
+Check active connection count
+
+Review long-running queries
+
+Check connection leak patterns
+
+Verify recent traffic spike
+
+Resolution Steps:
+
+Kill long-running queries
+
+Restart connection pool
+
+Increase pool size if safe
+
+Engage traffic throttling if required
+
+Escalation:
+Escalate to DBA if unresolved in 10 minutes.

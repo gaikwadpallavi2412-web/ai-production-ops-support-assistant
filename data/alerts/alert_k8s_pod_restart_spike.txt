@@ -1,0 +1,37 @@
+Alert Name: Warning – Kubernetes Pod Restart Spike
+Alert ID: ALT-K8S-008
+Service: platform-k8s
+Severity: Warning
+Environment: Production
+
+Trigger Condition:
+Pod restart count exceeded baseline.
+
+Threshold Details:
+
+Baseline: < 5 restarts/hour
+
+Current: 18 restarts/hour
+
+Detection Time: 2025-02-17T03:12:09Z
+
+Business Impact:
+Potential service instability in trade namespace.
+
+Recommended Runbook:
+Kubernetes Pod CrashLoop in Trade Microservice
+
+Immediate Actions:
+
+Check pod logs
+
+Review recent deployments
+
+Inspect memory limits
+
+Verify node health
+
+Escalation Policy:
+Escalate if CrashLoopBackOff observed.
+
+Status: Active

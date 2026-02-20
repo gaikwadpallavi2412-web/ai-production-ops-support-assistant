@@ -1,0 +1,35 @@
+Title: Batch EOD Trade Reconciliation Failure
+Service: eod-recon
+Severity: Critical
+Owner Team: Batch-Ops
+
+Symptoms:
+
+EOD job failed
+
+Missing reconciliation report
+
+Batch duration exceeded
+
+Initial Checks:
+
+Review batch logs
+
+Check DB availability
+
+Verify input files
+
+Inspect scheduler status
+
+Resolution Steps:
+
+Fix input data issues
+
+Rerun failed batch
+
+Monitor completion
+
+Validate reconciliation output
+
+Escalation:
+Page Batch-Ops if rerun fails.

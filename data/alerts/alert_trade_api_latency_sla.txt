@@ -1,0 +1,37 @@
+Alert Name: Warning – Trade API Latency Above SLA
+Alert ID: ALT-API-004
+Service: trade-booking-api
+Severity: Warning
+Environment: Production
+
+Trigger Condition:
+P95 latency exceeded SLA threshold.
+
+Threshold Details:
+
+SLA: 2000 ms
+
+Current P95: 3125 ms
+
+Detection Time: 2025-02-13T10:41:08Z
+
+Business Impact:
+User-facing trade booking delays.
+
+Recommended Runbook:
+Trade Booking API Latency Troubleshooting
+
+Immediate Actions:
+
+Check API CPU and memory
+
+Review slow queries
+
+Inspect thread pool
+
+Scale pods if required
+
+Escalation Policy:
+Escalate if latency persists beyond 30 minutes.
+
+Status: Active

@@ -1,0 +1,35 @@
+Title: MQ Queue Depth Spike – Trade Events
+Service: mq-trade-events
+Severity: High
+Owner Team: Messaging-Ops
+
+Symptoms:
+
+Queue depth increasing
+
+Consumer lag rising
+
+Message processing delays
+
+Initial Checks:
+
+Check consumer health
+
+Verify broker performance
+
+Inspect message retry rate
+
+Review recent deployments
+
+Resolution Steps:
+
+Restart consumers
+
+Scale consumer group
+
+Clear poison messages
+
+Monitor queue drain
+
+Escalation:
+Escalate if queue not draining after 20 minutes.

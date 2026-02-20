@@ -1,0 +1,35 @@
+Title: Kubernetes Pod CrashLoop in Trade Microservice
+Service: trade-microservice
+Severity: High
+Owner Team: Platform-Ops
+
+Symptoms:
+
+Pod in CrashLoopBackOff
+
+Frequent restarts
+
+Increased error rate
+
+Initial Checks:
+
+Check pod logs
+
+Verify config changes
+
+Inspect memory limits
+
+Check recent deployments
+
+Resolution Steps:
+
+Roll back recent deployment
+
+Fix configuration issues
+
+Adjust memory limits
+
+Redeploy service
+
+Escalation:
+Escalate if crashloop continues after rollback.

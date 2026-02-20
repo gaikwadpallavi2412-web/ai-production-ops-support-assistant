@@ -1,0 +1,39 @@
+Alert Name: Critical – Payment Gateway Timeout Rate High
+Alert ID: ALT-PAY-009
+Service: payment-gateway
+Severity: Critical
+Environment: Production
+
+Trigger Condition:
+Payment timeout error rate exceeded threshold.
+
+Threshold Details:
+
+Warning: > 1%
+
+Critical: > 2%
+
+Current Rate: 2.7%
+
+Detection Time: 2025-02-18T11:32:04Z
+
+Business Impact:
+Customer payment failures and retries increasing.
+
+Recommended Runbook:
+Payment Gateway Timeout Investigation
+
+Immediate Actions:
+
+Check upstream bank latency
+
+Review gateway thread pool
+
+Inspect network errors
+
+Scale gateway pods
+
+Escalation Policy:
+Page Payments-Ops if rate >3% for 10 minutes.
+
+Status: Active

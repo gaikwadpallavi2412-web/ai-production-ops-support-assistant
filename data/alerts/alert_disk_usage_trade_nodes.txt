@@ -1,0 +1,39 @@
+Alert Name: Critical – Disk Usage > 92% on Trade Nodes
+Alert ID: ALT-INFRA-007
+Service: infra-trade
+Severity: Critical
+Environment: Production
+
+Trigger Condition:
+Node filesystem usage exceeded safe threshold.
+
+Threshold Details:
+
+Warning: > 85%
+
+Critical: > 92%
+
+Current Usage: 94%
+
+Detection Time: 2025-02-16T02:41:11Z
+
+Business Impact:
+Risk of log write failures and pod eviction.
+
+Recommended Runbook:
+High Disk Usage on Trade Processing Servers
+
+Immediate Actions:
+
+Identify large files
+
+Trigger log rotation
+
+Clean temp directories
+
+Consider disk expansion
+
+Escalation Policy:
+Page Infra-Ops immediately if >95%.
+
+Status: Active

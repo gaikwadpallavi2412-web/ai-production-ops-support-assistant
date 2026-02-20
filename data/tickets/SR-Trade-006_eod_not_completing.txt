@@ -1,0 +1,30 @@
+Ticket ID: SR-Trade-006
+Title: EOD Reconciliation Not Completing
+Service: eod-recon
+Priority: Critical
+Status: Resolved
+Assigned Group: Batch-Ops
+
+User Description:
+Nightly reconciliation job did not complete within expected window.
+
+Impact:
+Finance reporting delayed.
+
+Investigation:
+
+Missing upstream file detected
+
+Batch validation failed
+
+Fix Applied:
+
+Retrieved missing file
+
+Re-triggered batch job
+
+Root Cause:
+Upstream file transfer delay.
+
+Validation:
+Batch completed successfully.

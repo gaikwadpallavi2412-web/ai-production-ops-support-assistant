@@ -1,0 +1,35 @@
+Title: Payment Gateway Timeout Investigation
+Service: payment-gateway
+Severity: High
+Owner Team: Payments-Ops
+
+Symptoms:
+
+Payment requests timing out
+
+Increased retry rate
+
+Customer transaction failures
+
+Initial Checks:
+
+Check upstream bank connectivity
+
+Review gateway latency metrics
+
+Inspect thread pool usage
+
+Check network errors
+
+Resolution Steps:
+
+Restart gateway pods
+
+Scale gateway deployment
+
+Enable retry with backoff
+
+Coordinate with upstream provider
+
+Escalation:
+Page Payments on-call if timeout rate > 5%.

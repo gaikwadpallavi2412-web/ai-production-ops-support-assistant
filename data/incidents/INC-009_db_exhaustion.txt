@@ -1,0 +1,60 @@
+Incident ID: INC-009
+Service: trading-db
+Severity: P1
+Region: Global
+Detected By: Connection Pool Alert
+
+Summary:
+Trading database connection pool reached maximum capacity causing application timeouts.
+
+Business Impact:
+
+Trade booking failures (~4%)
+
+API latency increased
+
+Customer impact observed
+
+Timeline:
+
+16:02 UTC – Pool exhaustion alert
+
+16:05 UTC – L2 engaged
+
+16:09 UTC – Long-running queries identified
+
+16:14 UTC – Sessions cleared
+
+16:22 UTC – Pool normalized
+
+Investigation Findings:
+
+Multiple orphan connections
+
+One heavy reporting query running
+
+Connection leak suspected in API
+
+Root Cause:
+Combination of connection leak and long-running reporting query.
+
+Resolution:
+
+Killed long-running queries
+
+Restarted connection pool
+
+Applied temporary pool increase
+
+Duration:
+20 minutes
+
+Preventive Actions:
+
+Add connection leak monitoring
+
+Review reporting query optimization
+
+Implement connection timeout policy
+
+Status: Resolved

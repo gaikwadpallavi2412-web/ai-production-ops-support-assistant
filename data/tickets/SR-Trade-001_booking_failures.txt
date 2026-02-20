@@ -1,0 +1,52 @@
+Ticket ID: SR-Trade-001
+Title: Intermittent Trade Booking Failures
+Service: trade-booking-api
+Priority: High
+Environment: Production
+Region: Global
+Status: Resolved
+Assigned Group: API-Ops
+
+Reported By: Trading Desk
+Reported Time: 2025-02-12T10:01:44Z
+
+User Description:
+Traders reported intermittent failures while submitting new trades via the booking API. Errors observed mostly during peak market hours.
+
+Business Impact:
+
+Approximately 3–4% trade booking failures
+
+Manual re-entry required for some trades
+
+Potential client dissatisfaction
+
+Initial Investigation:
+
+API latency elevated
+
+Error logs showing DB pool exhaustion
+
+Thread pool utilization near maximum
+
+Actions Taken:
+
+Checked database connection metrics
+
+Identified orphan connections
+
+Restarted affected API pods
+
+Increased connection pool temporarily
+
+Root Cause:
+Database connection pool exhaustion during peak load combined with stale sessions.
+
+Resolution:
+Connection pool increased and stale sessions cleared. Monitoring added.
+
+Validation:
+No further failures observed for 2 hours post-fix.
+
+Closure Notes:
+Recommend permanent pool tuning and connection leak monitoring.

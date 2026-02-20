@@ -1,0 +1,30 @@
+Ticket ID: SR-Trade-008
+Title: Database Connections Exhausted
+Service: trading-db
+Priority: Critical
+Status: Resolved
+Assigned Group: DB-Ops
+
+User Description:
+Applications unable to obtain DB connections.
+
+Impact:
+Trade booking failures observed.
+
+Investigation:
+
+Active connections near max
+
+Long-running reporting query found
+
+Fix Applied:
+
+Killed heavy query
+
+Restarted connection pool
+
+Root Cause:
+Connection leak combined with heavy reporting query.
+
+Validation:
+Connection usage returned to safe levels.

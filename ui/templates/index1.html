@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Production Support Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 AI Production Support Assistant</h1>
+
+        <div class="chat-box">
+            <textarea id="query" placeholder="Ask an L2 support question..."></textarea>
+            <button onclick="askQuestion()">Ask</button>
+        </div>
+
+        <div id="response" class="response-box"></div>
+    </div>
+
+<script>
+async function askQuestion() {
+    const query = document.getElementById("query").value;
+
+    const res = await fetch("/ask", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({query})
+    });
+
+    const data = await res.json();
+    renderResponse(data);
+}
+
+function renderResponse(data) {
+    const div = document.getElementById("response");
+
+    if (data.message) {
+        div.innerHTML = `<p>${data.message}</p>`;
+        return;
+    }
+
+    if (data.error) {
+        div.innerHTML = `<p style="color:red">${data.error}</p>`;
+        return;
+    }
+
+    let stepsHtml = "";
+    if (data.recommended_steps) {
+        stepsHtml = "<ol>" +
+            data.recommended_steps.map(s => `<li>${s}</li>`).join("") +
+            "</ol>";
+    }
+
+    let refsHtml = "";
+    if (data.reference_docs && data.reference_docs.length > 0) {
+        refsHtml = "<ul>" +
+            data.reference_docs.map(r => `<li>${r}</li>`).join("") +
+        "</ul>";
+    }
+
+    div.innerHTML = `
+        <h3>📌 Issue Summary</h3>
+        <p>${data.issue_summary}</p>
+
+        <h3>🔧 Impacted Service</h3>
+        <p>${data.impacted_service}</p>
+
+        <h3>📋 Recommended Steps</h3>
+        ${stepsHtml}
+
+        <h3>📊 Confidence</h3>
+        <p>${data.confidence}</p>
+
+        <h3>📚 Reference Documents</h3>
+        ${refsHtml}
+
+        <h3>🚨 Escalation Required</h3>
+        <p>${data.escalation_required}</p>
+    `;
+}
+</script>
+</body>
+</html>

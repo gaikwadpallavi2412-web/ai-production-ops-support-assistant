@@ -1,0 +1,7 @@
+2025-01-25 02:41:11.102 WARN  Disk usage high on node=trade-node-21 usage=91%
+2025-01-25 02:41:22.334 WARN  Filesystem pressure detected mount=/var/log
+2025-01-25 02:41:35.551 ERROR Log write failure due to insufficient disk space
+2025-01-25 02:42:01.778 WARN  Largest directory identified /var/log/trade size=28GB
+2025-01-25 02:42:30.991 INFO  Log rotation triggered manually
+2025-01-25 02:43:18.447 WARN  Disk usage still above safe threshold usage=89%
+2025-01-25 02:44:55.003 INFO  Disk cleanup completed usage=72%

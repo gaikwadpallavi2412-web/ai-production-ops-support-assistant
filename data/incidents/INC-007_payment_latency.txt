@@ -1,0 +1,60 @@
+Incident ID: INC-007
+Service: payment-gateway
+Severity: P2
+Region: APAC
+Detected By: Latency SLA Alert
+
+Summary:
+Payment gateway latency exceeded SLA threshold intermittently during peak transaction window.
+
+Business Impact:
+
+Payment processing delay up to 6 seconds
+
+Small number of customer timeouts (~1.8%)
+
+Increased retry traffic
+
+Timeline:
+
+11:32 UTC – Latency alert fired
+
+11:36 UTC – L2 investigation started
+
+11:41 UTC – Thread pool saturation observed
+
+11:46 UTC – Pods scaled
+
+11:55 UTC – Latency normalized
+
+Investigation Findings:
+
+Upstream bank response slower than usual
+
+Gateway thread pool near saturation
+
+No infra issues detected
+
+Root Cause:
+Upstream dependency slowdown combined with insufficient thread pool capacity.
+
+Resolution:
+
+Increased thread pool size
+
+Scaled gateway pods
+
+Enabled adaptive retry backoff
+
+Duration:
+23 minutes
+
+Preventive Actions:
+
+Add upstream latency dashboard
+
+Implement dynamic thread tuning
+
+Improve capacity forecasting
+
+Status: Resolved

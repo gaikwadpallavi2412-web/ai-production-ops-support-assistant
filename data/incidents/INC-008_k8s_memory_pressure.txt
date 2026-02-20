@@ -1,0 +1,60 @@
+Incident ID: INC-008
+Service: platform-k8s
+Severity: P3
+Region: Global
+Detected By: Node Memory Pressure Alert
+
+Summary:
+Kubernetes nodes reported memory pressure causing pod evictions in trade namespace.
+
+Business Impact:
+
+Two non-critical pods restarted
+
+No customer impact
+
+Increased restart noise
+
+Timeline:
+
+03:12 UTC – Memory pressure alert
+
+03:15 UTC – Node metrics reviewed
+
+03:19 UTC – High memory pod identified
+
+03:26 UTC – Pod rescheduled
+
+03:40 UTC – Node stabilized
+
+Investigation Findings:
+
+Trade-risk pods using higher memory than baseline
+
+Node utilization > 92%
+
+No memory leaks confirmed
+
+Root Cause:
+Temporary memory spike due to batch risk calculations.
+
+Resolution:
+
+Rescheduled heavy pods
+
+Increased node pool capacity
+
+Adjusted resource requests
+
+Duration:
+28 minutes
+
+Preventive Actions:
+
+Improve pod memory limits
+
+Add predictive scaling
+
+Review batch scheduling
+
+Status: Resolved

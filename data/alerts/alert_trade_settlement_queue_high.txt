@@ -1,0 +1,40 @@
+Alert Name: Critical – Trade Settlement Queue Depth High
+Alert ID: ALT-TSQ-001
+Service: trade-settlement
+Severity: Critical
+Environment: Production
+Region: EU
+
+Trigger Condition:
+Queue depth for TRADE.SETTLEMENT exceeded threshold.
+
+Threshold Details:
+
+Warning: > 10,000 messages
+
+Critical: > 15,000 messages
+
+Current Value: 18,742 messages
+
+Detection Time: 2025-02-10T09:14:22Z
+
+Business Impact:
+Potential delay in trade settlement confirmations and downstream processing.
+
+Recommended Runbook:
+Trade Settlement Queue Backlog Handling
+
+Immediate Actions:
+
+Verify MQ consumer health
+
+Check settlement service pods
+
+Monitor queue drain rate
+
+Scale consumers if backlog persists
+
+Escalation Policy:
+Page Trade-Ops on-call if queue not reducing within 15 minutes.
+
+Status: Active

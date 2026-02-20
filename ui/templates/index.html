@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Production Support Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+```
+<header class="header">
+    🚀 AI Production Support Assistant
+</header>
+
+<div id="chat-window" class="chat-window"></div>
+
+<div class="input-bar">
+    <textarea id="query" placeholder="Ask an L2 support question..."></textarea>
+    <button onclick="askQuestion()">Send</button>
+</div>
+```
+
+</div>
+
+<script>
+// ================================
+// Main ask function
+// ================================
+async function askQuestion() {
+    const textarea = document.getElementById("query");
+    const query = textarea.value.trim();
+    if (!query) return;
+
+    addMessage(query, "user");
+    textarea.value = "";
+
+    addTyping();
+
+    try {
+        const res = await fetch("/ask", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({query})
+        });
+
+        const data = await res.json();
+        console.log("API response:", data);
+
+        removeTyping();
+        renderBotResponse(data);
+
+    } catch (err) {
+        removeTyping();
+        addMessage("Error contacting server.", "bot");
+    }
+}
+
+// ================================
+// Chat helpers
+// ================================
+function addMessage(text, role) {
+    const chat = document.getElementById("chat-window");
+    const div = document.createElement("div");
+    div.className = `message ${role}`;
+    div.innerText = text;
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+}
+
+function addTyping() {
+    const chat = document.getElementById("chat-window");
+    const div = document.createElement("div");
+    div.className = "message bot typing";
+    div.id = "typing-indicator";
+    div.innerText = "Assistant is typing...";
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+}
+
+function removeTyping() {
+    const t = document.getElementById("typing-indicator");
+    if (t) t.remove();
+}
+
+// ================================
+// Render structured response
+// ================================
+function renderBotResponse(data) {
+    if (data.message) {
+        addMessage(data.message, "bot");
+        return;
+    }
+
+    if (data.error) {
+        addMessage("Error: " + data.error, "bot");
+        return;
+    }
+
+    let stepsText = "";
+    if (data.recommended_steps && data.recommended_steps.length > 0) {
+        stepsText = data.recommended_steps
+            .map((s, i) => `${i + 1}. ${s}`)
+            .join("\n");
+    }
+
+    let refsText = "";
+    if (data.reference_docs && data.reference_docs.length > 0) {
+        refsText =
+            "\n\n📚 Reference Documents:\n" +
+            data.reference_docs
+                .filter(r => r && String(r).toLowerCase() !== "null")
+                .map(r => "• " + r)
+                .join("\n");
+    }
+
+    const responseText =
+`📌 Issue Summary:
+${data.issue_summary || "N/A"}
+
+🔧 Impacted Service:
+${data.impacted_service || "N/A"}
+
+📋 Recommended Steps:
+${stepsText || "No steps available"}
+
+📊 Confidence: ${data.confidence || "N/A"}
+🚨 Escalation Required: ${data.escalation_required ?? "N/A"}${refsText}`;
+
+    addMessage(responseText, "bot");
+}
+</script>
+
+</body>
+</html>

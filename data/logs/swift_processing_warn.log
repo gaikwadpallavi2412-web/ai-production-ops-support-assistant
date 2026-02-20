@@ -1,0 +1,7 @@
+2025-01-30 06:18:11.441 WARN  [swift-processor] Message validation delay detected msgId=SWF992001
+2025-01-30 06:18:14.882 WARN  Partner ACK pending beyond expected window
+2025-01-30 06:18:18.220 ERROR Certificate nearing expiry daysRemaining=2
+2025-01-30 06:18:22.447 WARN  Retry queue length increasing size=420
+2025-01-30 06:18:31.991 INFO  Connectivity to SWIFT gateway verified
+2025-01-30 06:18:55.003 WARN  Processing latency above SLA latency=2100ms
+2025-01-30 06:19:21.778 INFO  System stable after retry drain

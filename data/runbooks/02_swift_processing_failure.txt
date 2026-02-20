@@ -1,0 +1,35 @@
+Title: SWIFT Message Processing Failure Recovery
+Service: swift-processing
+Severity: Critical
+Owner Team: Payments-Ops
+
+Symptoms:
+
+SWIFT messages failing validation
+
+Retry queue growing
+
+Missing partner acknowledgements
+
+Initial Checks:
+
+Validate SWIFT gateway connectivity
+
+Check parser error logs
+
+Verify certificate expiry
+
+Check message format changes
+
+Resolution Steps:
+
+Restart SWIFT processor service
+
+Reprocess failed messages
+
+Renew certificates if expired
+
+Validate partner connectivity
+
+Escalation:
+Escalate to Payments L3 if failures continue beyond 15 minutes.

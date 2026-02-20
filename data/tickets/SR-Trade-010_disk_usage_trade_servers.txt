@@ -1,0 +1,32 @@
+Ticket ID: SR-Trade-010
+Title: Disk Usage Alert on Trade Servers
+Service: infra-trade
+Priority: High
+Status: Resolved
+Assigned Group: Infra-Ops
+
+User Description:
+Disk usage alert triggered on trade processing nodes.
+
+Impact:
+Risk of log write failures.
+
+Investigation:
+
+Large log files identified
+
+Log rotation lagging
+
+Fix Applied:
+
+Cleaned old logs
+
+Triggered rotation
+
+Verified disk health
+
+Root Cause:
+Log rotation misconfiguration.
+
+Validation:
+Disk usage reduced to 72%.
